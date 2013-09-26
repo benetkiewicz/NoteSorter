@@ -12,39 +12,39 @@
         public void PinkShouldBeRecognizedAsRedTest()
         {
             var referenceBackgrounds = new ReferenceBackgrounds();
-            referenceBackgrounds.Add("yellow", new Uri("C:\\temp\\processorTests\\yellow.jpg"));
-            referenceBackgrounds.Add("black", new Uri("C:\\temp\\processorTests\\black.jpg"));
-            referenceBackgrounds.Add("red", new Uri("C:\\temp\\processorTests\\red.jpg"));
-            referenceBackgrounds.Add("green", new Uri("C:\\temp\\processorTests\\green.jpg"));
+            referenceBackgrounds.Add("yellow", new Uri("resources\\yellow.jpg", UriKind.Relative));
+            referenceBackgrounds.Add("black", new Uri("resources\\black.jpg", UriKind.Relative));
+            referenceBackgrounds.Add("red", new Uri("resources\\red.jpg", UriKind.Relative));
+            referenceBackgrounds.Add("green", new Uri("resources\\green.jpg", UriKind.Relative));
             var ip = new ImageProcessor(referenceBackgrounds);
 
-            Assert.AreEqual("red", ip.GetNearestColor(new Uri("C:\\temp\\processorTests\\pink.jpg")));
+            Assert.AreEqual("red", ip.GetNearestColor(new Uri("resources\\pink.jpg", UriKind.Relative)));
         }
 
         [Test]
         public void DarkGreyShouldBeRecognizedAsBlackTest()
         {
             var referenceBackgrounds = new ReferenceBackgrounds();
-            referenceBackgrounds.Add("black", new Uri("C:\\temp\\processorTests\\black.jpg"));
-            referenceBackgrounds.Add("red", new Uri("C:\\temp\\processorTests\\red.jpg"));
-            referenceBackgrounds.Add("green", new Uri("C:\\temp\\processorTests\\green.jpg"));
-            referenceBackgrounds.Add("yellow", new Uri("C:\\temp\\processorTests\\yellow.jpg"));
+            referenceBackgrounds.Add("black", new Uri("resources\\black.jpg", UriKind.Relative));
+            referenceBackgrounds.Add("red", new Uri("resources\\red.jpg", UriKind.Relative));
+            referenceBackgrounds.Add("green", new Uri("resources\\green.jpg", UriKind.Relative));
+            referenceBackgrounds.Add("yellow", new Uri("resources\\yellow.jpg", UriKind.Relative));
             var ip = new ImageProcessor(referenceBackgrounds);
 
-            Assert.AreEqual("black", ip.GetNearestColor(new Uri("C:\\temp\\processorTests\\darkGrey.jpg")));
+            Assert.AreEqual("black", ip.GetNearestColor(new Uri("resources\\darkGrey.jpg", UriKind.Relative)));
         }
 
         [Test]
         public void PhotoYellowNoteShouldBeRecognizedAsYellowTest()
         {
             var referenceBackgrounds = new ReferenceBackgrounds();
-            referenceBackgrounds.Add("black", new Uri("C:\\temp\\processorTests\\black.jpg"));
-            referenceBackgrounds.Add("red", new Uri("C:\\temp\\processorTests\\red.jpg"));
-            referenceBackgrounds.Add("yellow", new Uri("C:\\temp\\processorTests\\yellow.jpg"));
-            referenceBackgrounds.Add("green", new Uri("C:\\temp\\processorTests\\green.jpg"));
+            referenceBackgrounds.Add("black", new Uri("resources\\black.jpg", UriKind.Relative));
+            referenceBackgrounds.Add("red", new Uri("resources\\red.jpg", UriKind.Relative));
+            referenceBackgrounds.Add("yellow", new Uri("resources\\yellow.jpg", UriKind.Relative));
+            referenceBackgrounds.Add("green", new Uri("resources\\green.jpg", UriKind.Relative));
             var ip = new ImageProcessor(referenceBackgrounds);
 
-            Assert.AreEqual("yellow", ip.GetNearestColor(new Uri("C:\\temp\\processorTests\\yellowNote.jpg")));
+            Assert.AreEqual("yellow", ip.GetNearestColor(new Uri("resources\\yellowNote.jpg", UriKind.Relative)));
         }
     }
 }
