@@ -1,0 +1,16 @@
+[Oo]bj/
+[Bb]in/
+[Dd]ebug/
+[Rr]elease/
+*.suo
+*.user
+/TestResults
+*.vspscc
+*.vssscc
+*.dbmdl
+*.svn*
+*.resharper
+*\_ReSharper*
+*_ReSharper* 
+*.Cache
+packages/*
